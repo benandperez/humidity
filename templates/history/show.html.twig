@@ -1,0 +1,39 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}History{% endblock %}
+
+{% block body %}
+    <h1>History</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ history.id }}</td>
+            </tr>
+            <tr>
+                <th>Latitude</th>
+                <td>{{ history.latitude }}</td>
+            </tr>
+            <tr>
+                <th>Longitude</th>
+                <td>{{ history.longitude }}</td>
+            </tr>
+            <tr>
+                <th>Humidity</th>
+                <td>{{ history.humidity }}</td>
+            </tr>
+            <tr>
+                <th>CreatedAt</th>
+                <td>{{ history.createdAt ? history.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+            <tr>
+                <th>UpdatedAt</th>
+                <td>{{ history.updatedAt ? history.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('history_index') }}">back to list</a>
+
+{% endblock %}

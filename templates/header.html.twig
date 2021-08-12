@@ -1,0 +1,18 @@
+{% block header %}
+    <header>
+        <div class="header">
+
+            <nav class="header-menu">
+                <ul>
+                    <li><a href="{{ path('search') }}">Search Map</a></li>
+                    <li><a href="{{ path('history_index') }}">History</a></li>
+                </ul>
+            </nav>
+            <div class="header-image">
+                <a href="" class="logo_menu">
+                    <img src="{{ asset('img/browser.png') }}" class="img-fluid" width="200" height="50"/>
+                </a>
+            </div>
+        </div>
+    </header>
+{% endblock %}

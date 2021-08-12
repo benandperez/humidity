@@ -1,0 +1,41 @@
+{% extends 'base.html.twig' %}
+{% block header %}{% endblock %}
+{% block title %}History index{% endblock %}
+{% block content %}
+    <div class="row content">
+        <h3>History of queries </h3>
+
+        <div class="col-12">
+            <table id="data-table">
+                <thead>
+                <tr>
+                    <th>Id</th>
+                    <th>City</th>
+                    <th>Latitude</th>
+                    <th>Longitude</th>
+                    <th>Humidity</th>
+                    <th>CreatedAt</th>
+                    <th>UpdatedAt</th>
+                    <th>actions</th>
+                </tr>
+                </thead>
+                <tbody>
+                {% for item in histories %}
+                    <tr>
+                        <td>{{ item.id }}</td>
+                        <td>{{ item.city.name }}</td>
+                        <td>{{ item.latitude }}</td>
+                        <td>{{ item.longitude }}</td>
+                        <td>{{ item.humidity }}</td>
+                        <td>{{ item.createdAt ? item.createdAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>{{ item.updatedAt ? item.updatedAt|date('Y-m-d H:i:s') : '' }}</td>
+                        <td>
+                            <a href="{{ path('history_show', {'id': item.id}) }}">show</a>
+                        </td>
+                    </tr>
+                {% endfor %}
+                </tbody>
+            </table>
+        </div>
+    </div>
+{% endblock %}
